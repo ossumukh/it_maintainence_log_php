@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CPMS  </title>
+    <title> IT_LOG </title>
     <link rel="shortcut icon" href="../files/img/ico.ico">
     <link rel="stylesheet" href="../files/css/bootstrap.css">
     <link rel="stylesheet" href="../files/css/custom.css">
@@ -35,7 +35,7 @@
         <div class="col-lg-12 ">
 
           <?php
-          echo "<a class='button logout' href ='m_delete.php?id=$id' onClick=\"javascript:return confirm ('Are you really want to delete ?');\">Delete</a>";
+          echo "<a class='button logout' href ='m_delete.php?id=$id' onClick=\"javascript:return confirm ('Do you really want to log out?');\">Delete</a>";
            ?>
 
            <br><br><br><br>
@@ -108,9 +108,9 @@
   </div>
 
 
-  <footer>
+  <!-- <footer>
   <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
-  </footer>
+  </footer> -->
     <script src="../files/js/jquery.js"></script>
     <script src="../files/js/bootstrap.min.js"></script>
     <script src="../files/js/script.js"></script>

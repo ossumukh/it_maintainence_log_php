@@ -20,7 +20,7 @@
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <title>CPMS  </title>
+     <title>IT_LOG</title>
      <link rel="shortcut icon" href="../files/img/ico.ico">
      <link rel="stylesheet" href="../files/css/bootstrap.css">
      <link rel="stylesheet" href="../files/css/custom.css">
@@ -45,7 +45,7 @@
            $name = $data['name'];
              }
      ?>
-     <h2>You  sending this message to <?php echo $name ; ?></h2>
+     <h2>Your sending this message to <?php echo $name ; ?></h2>
       <br><br>
 
 
@@ -112,7 +112,7 @@
    if(($status)==46){
      $query = mysql_query("SELECT ref_no FROM `view_cmp` WHERE ref_no=$ref");
        if (mysql_num_rows($query) != 0){
-           #$message =  "This message is already send to the selected Engineer";
+           #$message =  "This message is already sent to the selected Engineer,so please wait";
          $message =   "<div class='alert errr' id='msg'>
          <div class ='text-right' id='close'>
              <svg class='pointer' fill='#FFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'>
@@ -143,7 +143,7 @@
               <path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/>
               <path d='M0 0h24v24H0z' fill='none'/>
           </svg>
-            <p class='text-center'>Message Wasn't send !!</p>
+            <p class='text-center'>Message Wasn't sent !!</p>
           </div> </div>";
      }
  }
@@ -159,10 +159,10 @@
 </div>
 </div>
 
-<footer>
+<!-- <footer>
 <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
 
-</footer>
+</footer> -->
 <script src="../files/js/jquery.js"></script>
 <script src="../files/js/bootstrap.min.js"></script>
 <script src="../files/js/script.js"></script>

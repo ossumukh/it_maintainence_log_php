@@ -32,7 +32,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CPMS  </title>
+    <title>IT_LOG </title>
     <link rel="shortcut icon" href="../files/img/ico.ico">
     <link rel="stylesheet" href="../files/css/bootstrap.css">
     <link rel="stylesheet" href="../files/css/custom.css">
@@ -50,7 +50,7 @@
       <?php
       if (isset($_SESSION['username'])===true) {echo "<h1> Welcome, ".$_SESSION['username']."</h1>";}
        ?>
-       <a class="button logout" href="../logout.php" onClick="javascript:return confirm ('Are you really want to delete ?');"> Logout </a>
+       <a class="button logout" href="../logout.php" onClick="javascript:return confirm ('Do you really want to log out?');"> Logout </a>
        &nbsp;&nbsp;&nbsp;
 
 
@@ -137,7 +137,7 @@
           </div>
       </div>
 
-      <!--Add post-->
+      <!-- Add post
       <div class="col-lg-12">
         <div class="post_content">
           <div class="text-center">
@@ -151,7 +151,7 @@
 
             <?php echo $message; ?>
           </div>
-        </div>
+        </div> -->
 
 
 
@@ -165,7 +165,7 @@
               echo "<div class='glow'> ";
               echo "<h4 class='heading'> Heading : ".$data['subject']."</h4>";
               echo "<p> Story : ".$data['story']."<br>";
-              echo "<div class='text-right'>  <a class ='button logout' href ='delete_posts.php?id=$id' onClick=\"javascript:return confirm ('Are you really want to delete ?');\">Delete</a>";
+              echo "<div class='text-right'>  <a class ='button logout' href ='delete_posts.php?id=$id' onClick=\"javascript:return confirm ('Do you really want to logout ?');\">Delete</a>";
               echo "</p></div></div> ";
              }
             ?>
@@ -181,9 +181,9 @@
   </div>
 
 
-    <footer>
+    <!-- <footer>
     <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
-    </footer>
+    </footer> -->
 
     <script src="../files/js/jquery.js"></script>
     <script src="../files/js/bootstrap.min.js"></script>

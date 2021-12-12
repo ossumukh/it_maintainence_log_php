@@ -26,7 +26,7 @@
           <ul>
           <li><a href="profile.php">Home</a></li>
             <li><a href="message.php">Add Complaints</a></li>
-          <li><a href="logout.php" onClick="javascript:return confirm ('Are you really want to delete ?');">Logout</a></li>
+          <li><a href="logout.php" onClick="javascript:return confirm ('Do you really want to logout ?');">Logout</a></li>
             
           </ul>
           
@@ -44,7 +44,7 @@
 
       
 
-          <div class="content">
+          <!-- <div class="content">
             <div class="container">
             
                   <div class="col-lg-12">
@@ -104,10 +104,10 @@
 
           </div>
         </div>
-      </div>
-                <footer>
+      </div> -->
+                <!-- <footer>
                 <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
-                </footer>
+                </footer> -->
 
 
 

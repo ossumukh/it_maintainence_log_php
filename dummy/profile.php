@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CPMS  </title>
+    <title>IT_LOG  </title>
     <link rel="shortcut icon" href="../files/img/ico.ico">
     <link rel="stylesheet" href="../files/css/bootstrap.css">
     <link rel="stylesheet" href="../files/css/custom.css">
@@ -28,7 +28,7 @@
 
     <div class="cover main" style="top:50px;">
       <?php if (isset($eng_session)===true) {echo "<h1> Welcome, ".$eng_session."</h1>";}
-       ?><a class="wid" href="../logout.php" onClick="javascript:return confirm ('Are you really want to delete ?');"> Logout </a>
+       ?><a class="wid" href="../logout.php" onClick="javascript:return confirm ('Do you really want to log out?');"> Logout </a>
 
        <p class="text-right">
           <?php echo date("d M , l "); ?>
@@ -122,7 +122,7 @@
 
         <br><br>
         <!--Posts-->
-        <div class="col-lg-12">
+        <!-- <div class="col-lg-12">
           <h2>News Feed</h2>
           <div class="posts">
             <?php
@@ -139,19 +139,19 @@
              }
             ?>
           </div>
-        </div>
+        </div> -->
         <br><br>
 
-        <div class="content">
+        <!-- <div class="content">
           <div class="jumbotron india_cover"></div>
-        </div>
+        </div> -->
 
 
     </div>
   </div>
-    <footer>
+    <!-- <footer>
     <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
-    </footer>
+    </footer> -->
 
     <script src="../files/js/jquery.js"></script>
     <script src="../files/js/bootstrap.min.js"></script>

@@ -69,9 +69,9 @@
           </div>
         </div>
     </div>
-      <footer>
+      <!-- <footer>
       <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
-      </footer>
+      </footer> -->
 
     <script src="../files/js/jquery.js"></script>
     <script src="../files/js/bootstrap.min.js"></script>

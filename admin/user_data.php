@@ -56,15 +56,15 @@
           </table>
           <br><br><br><br>
           <?php
-          echo "<a class='button logout' href ='delete.php?id=$id' onClick=\"javascript:return confirm ('Are you really want to delete ?');\">Delete</a>";
+          echo "<a class='button logout' href ='delete.php?id=$id' onClick=\"javascript:return confirm ('Do you really want to log out?');\">Delete</a>";
            ?>
         </div>
       </div>
 
 
-  <footer>
+  <!-- <footer>
   <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
-  </footer>
+  </footer> -->
   </div>
     <script src="../files/js/jquery.js"></script>
     <script src="../files/js/bootstrap.min.js"></script>
