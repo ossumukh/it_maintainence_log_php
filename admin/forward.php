@@ -65,7 +65,7 @@
      $subject = $arry['subject'];
      $complain = $arry['complain'];
      $ref = $arry['ref_no'];
-
+     $stat=$arry['statuses'];
    }
 
       echo "<tr> <td> <b> Message Id </b> </td>";
@@ -92,6 +92,9 @@
       echo "<tr> <td> <b> Refference </b> </td>";
       echo "     <td> ".$ref."</td></tr>";
 
+      echo "<tr> <td> <b> status </b> </td>";
+      echo "     <td> ".$stat."</td></tr>";
+
  ?>
  </table>
  <?php
@@ -104,6 +107,7 @@
  $subject_e = mysql_real_escape_string($subject);
  $complain_e = mysql_real_escape_string($complain);
  $ref_e = mysql_real_escape_string($ref);
+ $stat_e=mysql_real_escape_string($stat);
 
 
  if(empty($_POST)===false){
@@ -125,7 +129,7 @@
          </div>";
 
        }else{
-         mysql_query("INSERT INTO `view_cmp` VALUES ('0','$ref_e','$name_e','$email_e','$phone_no_e','$subject_e','$complain_e','$id_d')") or die(mysql_error());
+         mysql_query("INSERT INTO `view_cmp` VALUES ('0','$ref_e','$name_e','$email_e','$phone_no_e','$subject_e','$complain_e','$id_d','$stat_e')") or die(mysql_error());
 
          $message =   "<div class='alert succ' id='msg'>
          <div class ='text-right' id='close'>

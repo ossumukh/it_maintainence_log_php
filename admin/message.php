@@ -37,12 +37,24 @@
                 Messages
                 <span class='button view' href=''><?php echo "$num_rows";?></a>
               </div>
+              <div class='admin-data'>
+              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index.php">
+                <button type="submit">View reports</button>
+              </form>
+              </div>
+              
               <br><br><br><br>
               <br><br>
 
               <br>
               <h2 class="text-center"><?php echo $message; ?></h2>
               <br><br>
+
+              <br>
+              <!-- <a href="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index.php">View reports</a> -->
+              <!-- <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index.php">
+                <button type="submit">View reports</button>
+              </form> -->
 
           <?php
 

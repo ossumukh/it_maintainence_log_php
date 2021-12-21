@@ -23,6 +23,7 @@
 
   <div class="cover main">
     <h1>User Data</h1>
+    <!-- <h1>User Data</h1> -->
   </div>
     <!--Users client-->
     <div class="div">
@@ -34,7 +35,18 @@
               <div class='admin-data'>
                 Registered User
                 <span class='button view' href=''><?php echo "$num_rows";?></a>
-              </div><br><br><br><br><br>
+                
+              </div>
+              <div class='admin-data'>
+              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index1.php">
+                  <button type="submit">View reports</button>
+                </form>
+                
+                
+              </div>
+
+               
+                <br><br><br><br><br>
           <?php
             $db=mysql_query("SELECT * FROM `circle` ");
             while($data=mysql_fetch_array($db)) {
@@ -56,7 +68,15 @@
                 <div class='admin-data'>
                   Registered Engineer
                   <span class='button view' href=''><?php echo "$num_rows";?></a>
-                </div><br><br><br><br><br>
+                </div>
+                <div class='admin-data'>
+                <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index3.php">
+                <button type="submit">View reports</button>
+              </form>
+                </div>
+                
+
+              <br><br><br><br><br>
             <?php
               $db=mysql_query("SELECT * FROM `dummy` ");
               while($data=mysql_fetch_array($db)) {

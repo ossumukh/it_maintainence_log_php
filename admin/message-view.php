@@ -53,6 +53,7 @@
               $subject = $arry['subject'];
               $complain = $arry['complain'];
               $ref = $arry['ref_no'];
+              $stat=$arry['statuses'];
             }
 
                echo "<tr> <td> <b> Message Id </b> </td>";
@@ -78,6 +79,9 @@
 
                echo "<tr> <td> <b> Refference </b> </td>";
                echo "     <td> ".$ref."</td></tr>";
+
+               echo "<tr> <td> <b> Status </b> </td>";
+               echo "     <td> ".$stat."</td></tr>";
           ?>
           </table>
 

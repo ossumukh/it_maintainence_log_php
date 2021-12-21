@@ -4,6 +4,8 @@
   require 'core/config.php';
   include 'core/user_key.php';
 
+  session_start();
+  $_SESSION['id']=$current_user_id;
 //  require 'core/redirect.php';
 
  ?>
@@ -23,8 +25,19 @@
       <div class="cover">
         <nav class="nav_u">
         
+
+        <?php
+        $db=mysql_query("SELECT * FROM `view_cmp` WHERE email LIKE '%$session%' ");
+        while($data=mysql_fetch_array($db))
+        {
+          echo "<a href='general.php?id=$data[id]'>General</a>";
+        }
+        ?>
+
           <ul>
+          <!-- <li><a href="general.php">General</a></li> -->
           <li><a href="profile.php">Home</a></li>
+          <li><a href="My_complaints.php">My Complaints</a></li>
             <li><a href="message.php">Add Complaints</a></li>
           <li><a href="logout.php" onClick="javascript:return confirm ('Do you really want to logout ?');">Logout</a></li>
             

@@ -92,13 +92,6 @@ CREATE TABLE `cmp_log` (
 -- Dumping data for table `cmp_log`
 --
 
-INSERT INTO `cmp_log` (`id`, `user_id`, `name`, `username`, `email`, `phone no`, `subject`, `complain`, `ref_no`) VALUES
-(1, 1, 'Demo', 'demo', 'demo@demo.com', '7854125400', 'Test 1', 'Test1 with demo', 1747926),
-(2, 2, 'Liam Johnson', 'liam', 'liam@gmail.com', '8520001269', 'Customer Services Department', 'Dear Sir/Madam, I\'ve recently ordered a new pair of soccer cleats (item #69694582) from your website last week (May 7th). I received the order on May 10th, but unfortunately when I opened it, I saw that the cleats were used. Cleats were dirty enough and there was a small tear in front part where the', 1845767),
-(3, 3, 'Erma Anderson', 'erma', 'erma@gmail.com', '1547800002', 'Complaint Letter To Company', 'I am disappointed with your company\'s service because the provided service was much unsatisfactory as . . . . . . . . . . . . . . . .', 689799),
-(4, 4, 'Jamie Morgan', 'jamie', 'jamie@gmail.com', '3540002158', 'Regarding Excessive Fees', 'Dear Sir/Madam, On May 10th I enrolled in a debt repayment plan with company. The purpose of the repayment plan was to help me repay my debts quickly and efficiently. Company\'s fee structure of explanation of fee structure is excessive and not in the best interest of the client. These fees were not ', 2993246),
-(5, 8, 'George Carlson', 'george', 'george@gmail.com', '3450002547', 'Regarding Services', 'Dear Sir/Madam, I bought an item (#ASTRO58_D7) last week, I\'ve also attached a copy of my receipt for your kind information. I\'m writing to you because the service was not carried out with necessary skill, care and diligence. Used materials were not of merchantable quality. I also rang and spoke to ', 1018191);
-
 -- --------------------------------------------------------
 
 --
@@ -185,10 +178,6 @@ CREATE TABLE `view_cmp` (
 -- Dumping data for table `view_cmp`
 --
 
-INSERT INTO `view_cmp` (`id`, `ref_no`, `name`, `email`, `phone no`, `subject`, `complain`, `dummy`) VALUES
-(3, '1747926', 'Demo', 'demo@demo.com', '7854125400', 'Test 1', 'Test1 with demo', 'Eng '),
-(4, '1845767', 'Liam Johnson', 'liam@gmail.com', '8520001269', 'Customer Services Department', 'Dear Sir/Madam, I\'ve recently ordered a new pair of soccer cleats (item #69694582) from your website last week (May 7th). I received the order on May 10th, but unfortunately when I opened it, I saw that the cleats were used. Cleats were dirty enough and there was a small tear in front part where the', 'Wendy Foster '),
-(5, '1018191', 'George Carlson', 'george@gmail.com', '3450002547', 'Regarding Services', 'Dear Sir/Madam, I bought an item (#ASTRO58_D7) last week, I\'ve also attached a copy of my receipt for your kind information. I\'m writing to you because the service was not carried out with necessary skill, care and diligence. Used materials were not of merchantable quality. I also rang and spoke to ', 'John Russel ');
 
 --
 -- Indexes for dumped tables
@@ -205,6 +194,8 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `circle`
   ADD PRIMARY KEY (`id`);
+
+
 
 --
 -- Indexes for table `cmp_log`
@@ -273,3 +264,10 @@ ALTER TABLE `view_cmp`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+ALTER TABLE 'cmp_log'
+  ADD statuses varchar(255);
+
+ALTER TABLE 'view_cmp'
+  ADD statuses varchar(255);

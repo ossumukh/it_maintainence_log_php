@@ -4,7 +4,7 @@
     include 'core/user_key.php';
     //for session
     $session=$_SESSION['email'];
-    $ref = rand (3858558,100000);$error = "";$message = "";$alpha="M y a p p ";
+    $ref = rand (3858558,100000);$error = "";$message = "";$alpha="M y a p p ";$statuses="open";
  ?>
 <!DOCTYPE html>
 <html>
@@ -49,11 +49,21 @@
                      $phoneno =mysql_real_escape_string($_POST['phoneno']);
                      $subject = mysql_real_escape_string($_POST['subject']);
                      $complain = mysql_real_escape_string($_POST['complain']);
-                     if(empty($phoneno) || empty($subject) || empty($complain)){
-                     }elseif (!preg_match("/^[0-9]*$/",$phoneno)) {
+                    //  $statuses =mysql_real_escape_string($_POST['statuses']);
+                     if( empty($subject) || empty($complain))
+                     {
+                      $error = "Invalid subject or complain ";
+                     }
+                    //  else if(empty($statuses))
+                    //  {
+                    //   $error = "Invalid status";
+                    //  }
+                    //  else if(empty($phoneno) || empty($subject) || empty($complain)){}
+                    // else if(!preg_match("/^[0-9]*$/",$phoneno))
+                      else if (!preg_match("/^[0-9]*$/",$phoneno)||strlen($phoneno)!=10) {
                        $error = "Invalid Phone Number";
                      }else{
-                       mysql_query("INSERT INTO `cmp_log` VALUES ('0','$id','$name','$username','$email','$phoneno','$subject','$complain','$ref')") or die(mysql_error());
+                       mysql_query("INSERT INTO `cmp_log` VALUES ('0','$id','$name','$username','$email','$phoneno','$subject','$complain','$ref','$statuses')") or die(mysql_error());
                        $message = "Your Complain has been Registerd";
                        }
                    }
@@ -92,6 +102,10 @@
                 <tr>
                   <td class="text-left">Your Subject *</td>
                   <td><input type="text" name = "subject" placeholder = "Subject"></td>
+                </tr>
+                <tr>
+                  <td class="text-left">Status </td>
+                  <td class="text-left"><div class="dis_b"><?php echo $statuses;  ?></div></td>
                 </tr>
                 <tr>
                   <td class="text-left">Your Complain *</td>

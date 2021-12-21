@@ -51,12 +51,15 @@
                echo "     <td> ".md5($arry['password'])."</td> </tr>";
                echo "<tr> <td> <b> Joined in </b> </td>";
                echo "     <td> ".$arry['date']."</td></tr>";
+
+               echo "<tr> <td> <b> Department </b> </td>";
+               echo "     <td> ".$arry['Department']."</td></tr>";
              }
           ?>
           </table>
           <br><br><br><br>
           <?php
-          echo "<a class='button logout' href ='delete.php?id=$id' onClick=\"javascript:return confirm ('Do you really want to log out?');\">Delete</a>";
+          echo "<a class='button logout' href ='delete.php?id=$id' onClick=\"javascript:return confirm ('Do you really want to delete?');\">Delete</a>";
            ?>
         </div>
       </div>
