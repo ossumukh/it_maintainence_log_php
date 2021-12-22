@@ -28,6 +28,22 @@
  ?>
 
 
+<?php
+  if(empty($_POST)===false)
+  {
+    $query1=mysql_query("SELECT * FROM `view_cmp` WHERE id='$id'");
+              mysql_query("UPDATE `view_cmp`
+              SET statuses='closed'
+              WHERE id='$id'")or die(mysql_error());
+              
+    $query1=mysql_query("SELECT * FROM `cmp_log` WHERE ref='$ref'");
+    mysql_query("UPDATE `cmp_log`
+    SET statuses='closed'
+    WHERE ref_no='$ref'")or die(mysql_error());
+  }
+        
+?>
+
 
 
 
@@ -143,56 +159,17 @@
 
 
             
-            <?php
-            $query1=mysql_query("SELECT * FROM `view_cmp` WHERE id='$id'");
-            // while( $arry=mysql_fetch_array($query1) ) {
-            //   // $id=$arry['id'];
-            //   // $name=$arry['name'];
-            //   // $username=$arry['username'];
-            //   // $email = $arry['email'];
-            //      }
-            //        if(empty($_POST)===false){
-            //          $phoneno =mysql_real_escape_string($_POST['phoneno']);
-            //          $subject = mysql_real_escape_string($_POST['subject']);
-            //          $complain = mysql_real_escape_string($_POST['complain']);
-            //         //  $statuses =mysql_real_escape_string($_POST['statuses']);
-            //          if( empty($subject) || empty($complain))
-            //          {
-            //           $error = "Invalid subject or complain ";
-            //          }
-            //         //  else if(empty($statuses))
-            //         //  {
-            //         //   $error = "Invalid status";
-            //         //  }
-            //         //  else if(empty($phoneno) || empty($subject) || empty($complain)){}
-            //         // else if(!preg_match("/^[0-9]*$/",$phoneno))
-            //           else if (!preg_match("/^[0-9]*$/",$phoneno)||strlen($phoneno)!=10) {
-            //            $error = "Invalid Phone Number";
-            //          }else{
-                       // mysql_query("INSERT INTO `view_cmp` VALUES ('$id','$ref','$name','$email','$phoneno','$subject','$complain','dummy','closed')") or die(mysql_error());
-                      //  $message = "Your Complain has been Registerd";
-                      mysql_query("UPDATE `view_cmp`
-                      SET statuses='closed'
-                      WHERE id='$id'")or die(mysql_error());
-                  //      }
-                  //  }
-              ?>
+           
 
 
 
 
-            <?php
-            $query1=mysql_query("SELECT * FROM `cmp_log` WHERE ref='$ref'");
-                      mysql_query("UPDATE `cmp_log`
-                      SET statuses='closed'
-                      WHERE ref_no='$ref'")or die(mysql_error());
-                  //      }
-                  //  }
-              ?>
-
-
-              
+            <br>
+            <form method="post" >
+            <input type="text" name="statuses" placeholder="status" id="statuses" hidden="true">
             <td><button type="submit" class="log">complaint resolved</button></td>
+                      </form>
+            
 
 
 

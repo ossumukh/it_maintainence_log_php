@@ -2,8 +2,6 @@
 
 **Database Name: cpmsphp**
 
-**Developed by Manash Bharali**
-
 **Recommended PHP Version 5.6.3**
 
 
@@ -12,13 +10,5 @@
 Username: admin
 Password: admin
 
-**Customer Login Details**
 
-Email   : george@gmail.com
-Password: password
-
-**Engineer Login Details**
-
-Name    : John Russel
-Password: password
 

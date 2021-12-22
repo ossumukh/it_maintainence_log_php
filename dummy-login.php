@@ -84,8 +84,12 @@
     "></h1>
       <!-- <img alt="" src="https://www.rvce.edu.in/sites/all/themes/tb_rave/images/anniversary-logo.jpg"> -->
     </div>
-  </div>
-</div>
+  </div></div>
+  <div
+            style="display:inline-flex; float: right; padding: 15px; background-color:#27447E;width: 100%; margin-bottom: 20px;">
+            
+        </div>
+
 
 </html>
 
@@ -140,6 +144,7 @@
       <div class="links">
         <a href="index.php">User </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin-login.php">Admin </a>
       </div>
+      
   </div>
     <?php
     include 'footer.php';
