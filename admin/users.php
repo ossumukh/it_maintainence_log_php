@@ -109,82 +109,80 @@
     <link rel="stylesheet" href="../files/css/custom.css">
   </head>
   <body>
-
     <div class="cover main">
       <h1>User Data</h1>
     </div>
 
-    <?php require 'nav.php'; ?>
-    <div class="animated fadeIn">
+    <div>
+      <?php require 'nav.php'; ?>
+      <div class="animated fadeIn">
 
-    <!--Users client-->
+        <div class="div">
+          <!--Users client-->
+          <div class="col-lg-12 ">
+            <?php
+              $result = mysql_query("SELECT * FROM `circle`");
+              $num_rows = mysql_num_rows($result);
+            ?>
 
-    <div class="div">
-      <div class="col-lg-12 ">
-        <?php
-          $result = mysql_query("SELECT * FROM `circle`");
-          $num_rows = mysql_num_rows($result);
-        ?>
+            <div class='admin-data'>
+              Registered User
+              <span class='button view' href=''><?php echo "$num_rows";?></a>
+            </div>
 
-        <div class='admin-data'>
-          Registered User
-          <span class='button view' href=''><?php echo "$num_rows";?></a>
-        </div>
+            <div class='admin-data'>
+              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index1.php">
+                  <button type="submit">View reports</button>
+                </form>
+            </div>
+                
+            <br><br><br><br><br>
+            <?php
+              $db=mysql_query("SELECT * FROM `circle` ");
+              while($data=mysql_fetch_array($db)) {
+                echo"<div class='admin-data'>";
+                echo $data['name'];
+                echo "<a class='button view' href='user_data.php?id=$data[id]'>View</a>";
+                echo "</div>";
+              }
+            ?>
+          </div>
 
-        <div class='admin-data'>
-          <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index1.php">
+        <!--Engineers-->
+        <div class="col-lg-12 ">
+          <?php $result = mysql_query("SELECT * FROM `dummy`");
+            $num_rows = mysql_num_rows($result);
+          ?>
+
+          <div class='admin-data'>
+            Registered Engineer
+            <span class='button view' href=''><?php echo "$num_rows";?></a>
+          </div>
+
+          <div class='admin-data'>
+            <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index3.php">
               <button type="submit">View reports</button>
             </form>
+          </div>
+                    
+          <br><br><br><br><br>
+          <?php
+            $db=mysql_query("SELECT * FROM `dummy` ");
+            while($data=mysql_fetch_array($db)) {
+            echo"<div class='admin-data'>";
+            echo $data['name'];
+            echo "<a class='button view' href='user-engineer.php?id=$data[id]'>View</a>";
+            echo "</div>";
+            }
+          ?>
         </div>
-              
-        <br><br><br><br><br>
-        <?php
-          $db=mysql_query("SELECT * FROM `circle` ");
-          while($data=mysql_fetch_array($db)) {
-          echo"<div class='admin-data'>";
-          echo $data['name'];
-          echo "<a class='button view' href='user_data.php?id=$data[id]'>View</a>";
-          echo "</div>";
-          }
-        ?>
-    </div>
-
-    <!-- <div class="baro"></div> -->
-
-    <!--Engineers-->
-    <div class="col-lg-12 ">
-      <?php $result = mysql_query("SELECT * FROM `dummy`");
-        $num_rows = mysql_num_rows($result);
-      ?>
-
-      <div class='admin-data'>
-        Registered Engineer
-        <span class='button view' href=''><?php echo "$num_rows";?></a>
       </div>
-
-      <div class='admin-data'>
-        <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index3.php">
-          <button type="submit">View reports</button>
-        </form>
-      </div>
-                  
-      <br><br><br><br><br>
-      <?php
-        $db=mysql_query("SELECT * FROM `dummy` ");
-        while($data=mysql_fetch_array($db)) {
-        echo"<div class='admin-data'>";
-        echo $data['name'];
-        echo "<a class='button view' href='user-engineer.php?id=$data[id]'>View</a>";
-        echo "</div>";
-        }
-      ?>
     </div>
   </div>
-</div>
 
-    <script src="../files/js/jquery.js"></script>
-    <script src="../files/js/bootstrap.min.js"></script>
-    <script src="../files/js/script.js"></script>
+  <script src="../files/js/jquery.js"></script>
+  <script src="../files/js/bootstrap.min.js"></script>
+  <script src="../files/js/script.js"></script>
 
   </body>
 </html>

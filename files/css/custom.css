@@ -83,10 +83,10 @@ input{
   padding:10px;
   height: auto;
   width: 450px;
-  border: 1px solid #4db6ac;
+  border: 1px solid #27447E;
   border-radius: 2px;
   margin: 0 auto;
-  color:#4db6ac;
+  color:#27447E;
   font-size: 17px;
   text-align: center;
   padding-top: 4px;
@@ -143,7 +143,7 @@ span.red{
 
 nav.admin{
   width:230px;
-  height: 1000px;
+  height: 1200px;
   background:#37474f;
   padding: 0px;
   padding-top: 20px;
@@ -221,7 +221,7 @@ nav.admin ul li a svg{
 }
 
 .admin-data{
-  width:320px;
+  width:300px;
   height:70px;
   border-left:5px solid #27447E;
   background: #fff;
@@ -437,7 +437,7 @@ p{
   border:0px;
   padding: 15px 30px;
   background: #fff;
-  color: #4db6ac;
+  color: #27447E;
   font-size: 17px;
 }
 .acc:hover{

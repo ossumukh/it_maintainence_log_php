@@ -16,7 +16,7 @@
  {  
       $output = '';  
       $connect = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");  
-      $sql = "SELECT * FROM `view_cmp` WHERE dummy LIKE ".$eng_session." And statuses not like 'closed' ";  
+      $sql = "SELECT * FROM `view_cmp` WHERE dummy LIKE '%$eng_session%' And statuses not like 'closed' ";  
       $result = mysqli_query($connect, $sql);  
       while($row = mysqli_fetch_array($result))  
       {       
@@ -79,7 +79,7 @@
       <body>  
            <br /><br />  
            <div class="container" style="width:700px;">  
-                <h3 align="center">Open Complaints</h3><br />  
+                <h3 align="center">Closed Complaints</h3><br />  
                 <div class="table-responsive">  
                      <table class="table table-bordered">  
                           <tr>  

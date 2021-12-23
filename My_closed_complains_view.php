@@ -3,13 +3,12 @@
     require 'core/config.php';
     include 'core/user_key.php';
     //for session
+    $id = $_GET['id'];
     $session=$_SESSION['email'];
-    $ref = rand (3858558,100000);$error = "";$message = "";$alpha="M y a p p ";$statuses="open";
+    $ref = rand (3858558,100000);$error = "";$message = "";$alpha="M y a p p ";$statuses="closed";
+    $result = mysql_query("SELECT * FROM `view_cmp` WHERE id='$id'");
+	$arry = mysql_fetch_array($result);
  ?>
-
-
-
-
 
 
 
@@ -94,7 +93,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -120,42 +118,43 @@
   <body>
     <div class="cover user text-center" style="height:120px;">
       <br>
-      <h2>My Complaints</h2>
+      <h2>Complaint</h2>
     </div>
-   
-    
+
 
     <div class="div">
         <div class="col-lg-12 ">
+          <table>
           <?php
-            $result = mysql_query("SELECT * FROM `view_cmp` WHERE email LIKE '%$session%'");
-            $num_rows = mysql_num_rows($result);
-          ?>
-              <div class='admin-data'>
-                My Complaints 
-                <span class='button view' href=''><?php echo "$num_rows";?></a>
-                
-              </div>
+            $query1=mysql_query("SELECT * FROM `view_cmp` WHERE id='$id'");
+            while( $arry=mysql_fetch_array($query1) ) {
+               echo "<tr> <td> <b> Profile Id </b> </td>";
+               echo "     <td> ".$arry['id']."</td> </tr>";
+               echo "<tr> <td> <b> Name </b> </td>";
+               echo "     <td> ".$arry['name']."</td> </tr>";
 
-               
-                <br><br><br><br><br>
-          <?php
-            $db=mysql_query("SELECT * FROM `view_cmp` WHERE email LIKE '%$session%' ");
-            while($data=mysql_fetch_array($db)) {
-            echo"<div class='admin-data'>";
-            echo $data['name'];
-            echo "<a class='button view' href='My_complaint_view.php?id=$data[id]'>View</a>";
-            echo "</div>";
-           }
+               echo "<tr> <td> <b> Reference number </b> </td>";
+               echo "     <td> ".$arry['ref_no']."</td> </tr>";
+
+               echo "<tr> <td> <b> Email </b> </td>";
+               echo "     <td> ".$arry['email']."</td> </tr>";
+               echo "<tr> <td> <b> Phone number </b> </td>";
+               echo "     <td> ".($arry['phone no'])."</td> </tr>";
+               echo "<tr> <td> <b> Subject </b> </td>";
+               echo "     <td> ".$arry['subject']."</td></tr>";
+
+               echo "<tr> <td> <b> Complaint </b> </td>";
+               echo "     <td> ".$arry['complain']."</td></tr>";
+
+               echo "<tr> <td> <b> Technician </b> </td>";
+               echo "     <td> ".$arry['dummy']."</td></tr>";
+
+               echo "<tr> <td> <b> Status </b> </td>";
+               echo "     <td> ".$arry['statuses']."</td></tr>";
+             }
           ?>
+          </table>
+          <br><br><br><br>
+          
         </div>
-
-        
-    </div>
-
-
-    <script src="files/js/jquery.js"></script>
-    <script src="files/js/bootstrap.min.js"></script>
-    <script src="files/js/script.js"></script>
-  </body>
-</html>
+      </div>
