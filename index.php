@@ -97,6 +97,11 @@
   </div>
 </div>
 
+<div
+            style="display:inline-flex; float: right; padding: 15px; background-color:#27447E;width: 100%; margin-bottom: 20px;">
+            
+        </div>
+
 </html>
 
 
