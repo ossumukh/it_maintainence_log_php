@@ -82,7 +82,7 @@
                      </table>  
                      <br />  
                      <form method="post">  
-                          <input type="submit" name="create_pdf" class="btn btn-danger" value="Create PDF" />  
+                          <input type="submit" name="pdfs" class="btn btn-danger" value="Create PDF" />  
                      </form>  
                 </div>  
            </div>  

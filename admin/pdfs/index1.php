@@ -19,23 +19,23 @@
       return $output;  
  }  
  if(isset($_POST["pdfs"]))  
- {  
+ {
+     date_default_timezone_set('Asia/Kolkata');
       require_once('tcpdf_min/tcpdf.php');  
-     //  $pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false); 
-      $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false); 
-      $pdf->SetCreator(PDF_CREATOR);  
-      $pdf->SetTitle("Export HTML Table data to PDF using TCPDF in PHP");  
-      $pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
-      $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));  
-      $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));  
-      $pdf->SetDefaultMonospacedFont('helvetica');  
-      $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);  
-      $pdf->SetMargins(PDF_MARGIN_LEFT, '5', PDF_MARGIN_RIGHT);  
-      $pdf->setPrintHeader(false);  
-      $pdf->setPrintFooter(false);  
-      $pdf->SetAutoPageBreak(TRUE, 10);  
-      $pdf->SetFont('helvetica', '', 12);  
-      $pdf->AddPage();  
+      $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
+      $obj_pdf->SetCreator(PDF_CREATOR);  
+      $obj_pdf->SetTitle("Export HTML Table data to PDF using TCPDF in PHP");  
+     //  $obj_pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
+      $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));  
+      $obj_pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));  
+      $obj_pdf->SetDefaultMonospacedFont('helvetica');  
+      $obj_pdf->SetFooterMargin(PDF_MARGIN_FOOTER);  
+      $obj_pdf->SetMargins(PDF_MARGIN_LEFT, '5', PDF_MARGIN_RIGHT);  
+      $obj_pdf->setPrintHeader(false);  
+      $obj_pdf->setPrintFooter(false);  
+      $obj_pdf->SetAutoPageBreak(TRUE, 10);  
+      $obj_pdf->SetFont('helvetica', '', 12);  
+      $obj_pdf->AddPage();  
       $content = '';  
       $content .= '  
       <h3 align="center">Export HTML Table data to PDF using TCPDF in PHP</h3><br /><br />  
@@ -47,13 +47,15 @@
                 <th width="45%">phone no</th>  
                 <th width="10%">complain</th>  
            </tr>  
-      ';  
+      ';   
       $content .= fetch_data();  
       $content .= '</table>';  
-      $pdf->writeHTML($content); 
+      $obj_pdf->writeHTML($content, true, false, true, false, ''); 
       header('Content-type: application/pdf');
       header('Content-Disposition: attachment; filename="file.pdf"'); 
-      $pdf->Output('sample.pdf', 'D');  
+      ob_end_clean();
+      $pdf->Output('job.pdf', 'I');
+      
  }  
  ?>  
  <!DOCTYPE html>  
@@ -81,7 +83,7 @@
                      </table>  
                      <br />  
                      <form method="post">  
-                          <input type="submit" name="create_pdf" class="btn btn-danger" value="Create PDF" />  
+                          <input type="submit" name="pdfs" class="btn btn-danger" value="Create PDF" />  
                      </form>  
                 </div>  
            </div>  
