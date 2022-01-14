@@ -72,7 +72,7 @@
     <link rel="stylesheet" href="../files/css/custom.css">
   </head>
   <body>
-  <?php require 'nav.php';?>
+  <!-- <?php require 'nav.php';?> -->
   <div class="cover main" style="background:#40C4FF;">
     <h1>Message</h1>
   </div>
@@ -163,12 +163,16 @@
 
 
 
-
             <br>
             <form method="post" >
             <input type="text" name="statuses" placeholder="status" id="statuses" hidden="true">
             <td><button type="submit" class="log">complaint resolved</button></td>
-                      </form>
+            <!-- <td><button type="submit" class="log"  onclick="history.back()">Go back</button</td> -->
+            </form>
+
+            <!-- <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+            </form> -->
             
 
 

@@ -8,6 +8,7 @@
         <li><a href="message.php">Message</a></li>
         <li><a href="closed_complaints.php">Closed Complaints</a></li>
         <li><a href="open_complaints.php">Open Complaints</a></li>
+        <!-- <li><a href="mail.php">Send mail</a></li> -->
 
       </ul>
 
