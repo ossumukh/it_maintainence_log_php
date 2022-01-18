@@ -119,7 +119,7 @@
 
     <div class="div">
         <div class="col-lg-12 ">
-          <?php $result = mysql_query("SELECT * FROM `cmp_log` WHERE ref_no NOT IN (SELECT ref_no FROM view_cmp)");
+          <?php $result = mysql_query("SELECT * FROM `cmp_log`");
             $num_rows = mysql_num_rows($result);
             ?>
               <div class='admin-data'>
@@ -128,7 +128,7 @@
               </div>
               <div class='admin-data'>
               <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/csv/index.php">
-                <button type="submit" class="btn btn-primary">View reports</button>
+                <button type="submit">View reports</button>
               </form>
               </div>
 
@@ -138,8 +138,8 @@
               </form>
               </div> -->
               
-              <br><br><br>
-              
+              <br><br><br><br>
+              <br><br>
 
               <br>
               <h2 class="text-center"><?php echo $message; ?></h2>

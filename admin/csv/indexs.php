@@ -7,7 +7,7 @@
 // Fetch records from database 
 // $query = $db->query("SELECT * FROM members ORDER BY id ASC"); 
 $connect = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");
-    $sql = "SELECT * FROM `cmp_log` WHERE ref_no NOT IN (SELECT ref_no FROM view_cmp)";
+    $sql = "SELECT * FROM cmp_log ORDER BY id ASC";
     $result = mysqli_query($connect, $sql);
 if($result->num_rows > 0){ 
     $delimiter = ","; 

@@ -1,5 +1,5 @@
 <?php 
- $name=$_GET['name'];
+ 
 // Load the database configuration file 
 // include_once '../core/config.php'; 
 // require '../core/config.php';
@@ -7,7 +7,7 @@
 // Fetch records from database 
 // $query = $db->query("SELECT * FROM members ORDER BY id ASC"); 
 $connect = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");
-    $sql ="SELECT * FROM `view_cmp` WHERE dummy LIKE '%$name%' And statuses like 'closed' ";
+    $sql ="SELECT * FROM `view_cmp` WHERE statuses like 'closed' ";
     $result = mysqli_query($connect, $sql);
    if($result->num_rows > 0){ 
     $delimiter = ","; 

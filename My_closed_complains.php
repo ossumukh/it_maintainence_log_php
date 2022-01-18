@@ -137,10 +137,6 @@
                 
               </div>
 
-              <div class='admin-data'>
-                    <a href="My_closed_complaints_table.php?email=<?php echo $session; ?>"class="btn btn-primary">View Report</a>
-              
-              </div>
                
                 <br><br><br><br><br><br>
           <?php

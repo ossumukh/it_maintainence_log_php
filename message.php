@@ -4,12 +4,6 @@
     include 'core/user_key.php';
     //for session
     $session=$_SESSION['email'];
-    // while(sizeof($array)<=10000){
-    //   $number = mt_rand(0,999999999999);
-    //   if(!array_key_exists($number,$array)){
-    //      $array[$number] = null;
-    //   }
-    // }
     $ref = rand (3858558,100000);$error = "";$message = "";$alpha="M y a p p ";$statuses="open";
  ?>
 

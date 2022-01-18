@@ -132,12 +132,12 @@
 
             <div class='admin-data'>
               <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/csv/index1.php">
-                  <button type="submit" class="btn btn-primary">View reports</button>
+                  <button type="submit">View reports</button>
                 </form>
             </div>
 
             <div class='admin-data'>
-              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/graphs/graph2.html">
+              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/graphs/graph1.php">
                   <button type="submit">graph1</button>
                 </form>
             </div>
@@ -167,7 +167,7 @@
 
           <div class='admin-data'>
             <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/csv/index3.php">
-              <button type="submit" class="btn btn-primary">View reports</button>
+              <button type="submit">View reports</button>
             </form>
           </div>
                     
