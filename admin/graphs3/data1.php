@@ -105,7 +105,7 @@ console.log(names)
     $(document).ready(function () {
       const ctx = document.getElementById("myChart").getContext("2d");
       const myChart = new Chart(ctx, {
-        type: "bar",
+        type: "line",
         data: {
           labels: names,
           datasets: [

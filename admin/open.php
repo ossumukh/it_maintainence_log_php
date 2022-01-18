@@ -1,17 +1,11 @@
-<link rel="shortcut icon" href="../files/img/ico.ico">
-<link rel="stylesheet" href="../files/css/bootstrap.css">
-<link rel="stylesheet" href="../files/css/custom.css">
-
 <?php
-  require 'session.php';
+  require '../core/session.php';
   require '../core/config.php';
-  require 'dummy-key.php';
-  $name=$_GET['name'];
-//   $result = mysql_query("SELECT * FROM `cmp_log`");
-//   $num_rows = mysql_num_rows($result);
+  require '../core/admin-key.php';
 
-//   $eng_id = "";
  ?>
+
+
 
 
 
@@ -73,7 +67,7 @@
                             <div class="block__content">
                                 <h3 class="rtecenter"><span style="font-size:16px">Rashtreeya Sikshana Samithi
                                         Trust</span></h3>
-                                <h1 class="rtecenter"><span style="font-size:26px"><a  title="Home">R V College
+                                <h1 class="rtecenter"><span style="font-size:26px"><a title="Home">R V College
                                             of Engineering </a></span></h1>
                                 <h6 class="rtecenter"><span style="font-size:12px">Autonomous Institution affiliated to
                                         Visvesvaraya Technological University, Belagavi</span></h6>
@@ -88,107 +82,110 @@
             style="display:inline-flex; float: right; padding: 15px; background-color:#27447E;width: 100%; margin-bottom: 20px;">
             
         </div>
-        
 
     </div>
 </body>
 
 </html>
 
-<?php  
- function fetch_data()  
- {  
-    $name=$_GET['name'];
-      $output = '';  
-      $connect = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");  
-      $sql = "SELECT * FROM `view_cmp` WHERE dummy LIKE '%$name%' And statuses not like 'closed' ";  
-      $result = mysqli_query($connect, $sql);  
-      while($row = mysqli_fetch_array($result))  
-      {       
-      $output .= '<tr>  
-                          <td>'.$row["id"].'</td>  
-                          <td>'.$row["name"].'</td>  
-                          <td>'.$row["email"].'</td>  
-                          <td>'.$row["phone no"].'</td>
-                          <td>'.$row["subject"].'</td>
-                          <td>'.$row["complain"].'</td>
-                          <td>'.$row["dummy"].'</td>   
-                     </tr>  
-                          ';  
-      }  
-      return $output;  
- }  
- if(isset($_POST["pdfs"]))  
- {  
-      require_once('tcpdf_min/tcpdf.php');  
-     //  $pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false); 
-      $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false); 
-      $pdf->SetCreator(PDF_CREATOR);  
-      $pdf->SetTitle("Export HTML Table data to PDF using TCPDF in PHP");  
-      $pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
-      $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));  
-      $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));  
-      $pdf->SetDefaultMonospacedFont('helvetica');  
-      $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);  
-      $pdf->SetMargins(PDF_MARGIN_LEFT, '5', PDF_MARGIN_RIGHT);  
-      $pdf->setPrintHeader(false);  
-      $pdf->setPrintFooter(false);  
-      $pdf->SetAutoPageBreak(TRUE, 10);  
-      $pdf->SetFont('helvetica', '', 12);  
-      $pdf->AddPage();  
-      $content = '';  
-      $content .= '  
-      <h3 align="center">Export HTML Table data to PDF using TCPDF in PHP</h3><br /><br />  
-      <table border="1" cellspacing="0" cellpadding="5">  
-           <tr>  
-                <th width="5%">id</th>  
-                <th width="30%">name</th>  
-                <th width="10%">email</th>  
-                <th width="45%">phone no</th>  
-                <th width="10%">complain</th>  
-           </tr>  
-      ';  
-      $content .= fetch_data();  
-      $content .= '</table>';  
-      $pdf->writeHTML($content); 
-      header('Content-type: application/pdf');
-      header('Content-Disposition: attachment; filename="file.pdf"'); 
-      $pdf->Output('sample.pdf', 'D');  
- }  
- ?>  
- <!DOCTYPE html>  
- <html>  
-      <head>  
-           <title>Webslesson Tutorial | Export HTML Table data to PDF using TCPDF in PHP</title>  
-           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />            
-      </head>  
-      <body>  
-           <br /><br />  
-           <div class="container" >  
-                <h3 align="center">My Open Complaints</h3><br />  
-                <div class="table-responsive">  
-                     <table class="table table-bordered">  
-                          <tr>  
-                               <th >id</th>  
-                               <th >name</th>  
-                               <th >email</th>
-                               <th >Phone no</th>  
-                               <th >Subject</th>
-                               <th >Complaint</th>
-                               <th >Technician</th>
-                          </tr>  
-                     <?php  
-                     echo fetch_data();  
-                     ?>  
-                     </table>  
-                     <br />  
-                     <!-- <form method="post">  
-                          <input type="submit" name="pdf" class="btn btn-danger" value="Create PDF" />  
-                     </form>   -->
-                     <a href="open_complaints_csv.php?name=<?php echo $name; ?>" class="btn btn-danger">Export</a>
-                     <br><br>
-                     <a href="/ComplaintMgSystem-PHP/dummy/message.php" class="btn btn-danger"> Back</a>
-                </div>  
-           </div>  
-      </body>  
- </html>
+
+
+<br><br><br><br><br><br><br><br>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CPMS  </title>
+    <link rel="shortcut icon" href="../files/img/ico.ico">
+    <link rel="stylesheet" href="../files/css/bootstrap.css">
+    <link rel="stylesheet" href="../files/css/custom.css">
+
+
+  </head>
+  <body>
+
+  <?php require 'nav.php'; ?>
+  <div class="animated fadeIn">
+
+
+  <div class="cover main">
+    <h1>Open Complaints</h1>
+  </div>
+
+    <div class="div">
+        <div class="col-lg-12 ">
+          <?php $result = mysql_query("SELECT * FROM `view_cmp` where statuses not like 'closed'");
+            $num_rows = mysql_num_rows($result);
+            ?>
+              <div class='admin-data'>
+                Messages
+                <span class='button view' href=''><?php echo "$num_rows";?></a>
+              </div>
+              <div class='admin-data'>
+              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/csv/opencomplaints.php">
+                <button type="submit" class="btn btn-primary">View reports</button>
+              </form>
+              </div>
+
+              <!-- <div class='admin-data'>
+              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index2.php">
+                <button type="submit">View reports 2</button>
+              </form>
+              </div> -->
+              
+              <br><br><br>
+              
+
+              <br>
+              <h2 class="text-center"><?php echo $message; ?></h2>
+              <br><br>
+
+              <br>
+              <!-- <a href="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index.php">View reports</a> -->
+              <!-- <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/pdfs/index.php">
+                <button type="submit">View reports</button>
+              </form> -->
+
+          <?php
+
+            while($data=mysql_fetch_array($result)) {
+            echo"<div class='admin-data'>";
+            echo $data['name'];
+            $empty=$data['name'];
+            echo "<a class='button view' href='open_view.php?id=$data[id]'>View</a>";
+            echo "</div>";
+
+          }
+            if (empty($empty)==true) {
+              $message = "You Have no Message !!";
+            }else{
+              $message = "You Have got some Message";
+
+            }
+
+
+          ?>
+
+
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        </div>
+      </div>
+
+  </div>
+
+      <!-- <footer>
+      <br><br>&copy <?php echo date("Y"); ?> <?php echo $web_name; ?>
+      </footer> -->
+
+    <script src="../files/js/jquery.js"></script>
+    <script src="../files/js/bootstrap.min.js"></script>
+    <script src="../files/js/script.js"></script>
+
+  </body>
+</html>

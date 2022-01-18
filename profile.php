@@ -128,6 +128,7 @@
           <ul>
           <!-- <li><a href="general.php">General</a></li> -->
           <li><a href="profile.php">Home</a></li>
+          <li><a href="My_not_yet_open_complaints.php">Not Opened Complaints</a></li>
           <li><a href="My_open_complaints.php">Open Complaints</a></li>
           <li><a href="My_closed_complains.php">Closed Complaints</a></li>
           <li><a href="message.php">Add Complaints</a></li>

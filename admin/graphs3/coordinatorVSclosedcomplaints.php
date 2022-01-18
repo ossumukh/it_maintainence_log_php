@@ -1,7 +1,8 @@
 <?php
 
 $conn = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");
-$sqlQuery = "SELECT name,COUNT(*) as total_complaints FROM `cmp_log` group by name;";
+$sqlQuery = "SELECT name,COUNT(*) as total_complaints FROM `view_cmp` Where statuses like 'closed' group by name;
+";
 
 $result = mysqli_query($conn,$sqlQuery);
 
@@ -71,7 +72,7 @@ mysqli_close($conn);
       "
     >
       <h2 style="text-align: center">
-        Bar Graph of Coordinator vs their Total Complaints in 
+        Bar Graph of Coordinator vs their Closed Complaints in 
       </h2>
       <div
         class="chart-container"
@@ -105,7 +106,7 @@ console.log(names)
     $(document).ready(function () {
       const ctx = document.getElementById("myChart").getContext("2d");
       const myChart = new Chart(ctx, {
-        type: "bar",
+        type: "line",
         data: {
           labels: names,
           datasets: [

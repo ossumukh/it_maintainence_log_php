@@ -3,7 +3,7 @@
   require 'session.php';
   require '../core/config.php';
   require 'dummy-key.php';
-
+  $session=$_SESSION['name'];
 
 
 

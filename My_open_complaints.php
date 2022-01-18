@@ -121,6 +121,7 @@
     <div class="cover user text-center" style="height:120px;">
       <br>
       <h2>My Complaints</h2>
+      
     </div>
    
     
@@ -134,8 +135,16 @@
               <div class='admin-data'>
                 My Complaints 
                 <span class='button view' href=''><?php echo "$num_rows";?></a>
-                
+                </div>
+                <div class='admin-data'>
+                    <a href="My_open_complaints_table.php?email=<?php echo $session; ?>"class="btn btn-primary">View Report</a>
+              
               </div>
+                <!-- <div class='admin-data'>
+              <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/csv/index.php">
+                <button type="submit">View reports</button>
+              </form>
+              </div> -->
 
                
                 <br><br><br><br><br><br>
