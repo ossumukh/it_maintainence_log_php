@@ -157,16 +157,16 @@ $(function()
 
  <!-- <h3>complaints</h3> -->
 <table border='1' width="1000px">
-<div style="font-weight:bolder;">
-<tr  >
-<td >id</td>
+<div style="font-weight:bolder;" style="background-color:powderblue;">
+<tr style="background-color:#808080" >
+<td >ID</td>
 <td>Name</td>
-<td>email</td>
-<td>phone no</td>
-<td>subject</td>
-<td>complaint</td>
-<td>reference no</td>
-<td>status</td>
+<td>Email</td>
+<td>Phone no</td>
+<td>Subject</td>
+<td>Complaint</td>
+<td>Reference no</td>
+<td>Status</td>
 
 </tr>
 </div>

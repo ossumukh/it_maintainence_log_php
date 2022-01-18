@@ -1,5 +1,5 @@
 <?php 
- $name=$_GET['name'];
+ $session=$_GET['email'];
 // Load the database configuration file 
 // include_once '../core/config.php'; 
 // require '../core/config.php';
@@ -7,23 +7,23 @@
 // Fetch records from database 
 // $query = $db->query("SELECT * FROM members ORDER BY id ASC"); 
 $connect = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");
-    $sql ="SELECT * FROM `view_cmp` WHERE dummy LIKE '%$name%' And statuses like 'closed' ";
+    $sql = "SELECT * FROM `view_cmp` WHERE email LIKE '%$session%' and statuses like 'closed'";
     $result = mysqli_query($connect, $sql);
-   if($result->num_rows > 0){ 
+if($result->num_rows > 0){ 
     $delimiter = ","; 
-    $filename = "Closed Complaints" . ".csv"; 
+    $filename = "My Closed Complaints" . ".csv"; 
      
     // Create a file pointer 
     $f = fopen('php://memory', 'w'); 
      
     // Set column headers 
-    $fields = array('ID', 'NAME', 'Email', 'Phone no', 'Subject','Complaint'); 
+    $fields = array('ID', 'Ref No', 'Subject', 'Complaint','Status'); 
     fputcsv($f, $fields, $delimiter); 
      
     // Output each row of the data, format line as csv and write to file pointer 
     while($row = $result->fetch_assoc()){ 
         $status = ($row['status'] == 1)?'Active':'Inactive'; 
-        $lineData = array($row['id'], $row['name'], $row['email'], $row['phone no'], $row['subject'],$row['complain']); 
+        $lineData = array($row['id'], $row['ref_no'], $row['subject'],$row['complain'],$row['statuses']); 
         fputcsv($f, $lineData, $delimiter); 
     } 
      

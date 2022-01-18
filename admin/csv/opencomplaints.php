@@ -1,17 +1,4 @@
-<link rel="shortcut icon" href="../files/img/ico.ico">
-<link rel="stylesheet" href="../files/css/bootstrap.css">
-<link rel="stylesheet" href="../files/css/custom.css">
 
-<?php
-  require 'session.php';
-  require '../core/config.php';
-  require 'dummy-key.php';
-  $name=$_GET['name'];
-//   $result = mysql_query("SELECT * FROM `cmp_log`");
-//   $num_rows = mysql_num_rows($result);
-
-//   $eng_id = "";
- ?>
 
 
 
@@ -101,7 +88,7 @@
     $name=$_GET['name'];
       $output = '';  
       $connect = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");  
-      $sql = "SELECT * FROM `view_cmp` WHERE dummy LIKE '%$name%' And statuses not like 'closed' ";  
+      $sql = "SELECT * FROM `view_cmp` where statuses not like 'closed' ";  
       $result = mysqli_query($connect, $sql);  
       while($row = mysqli_fetch_array($result))  
       {       
@@ -185,9 +172,9 @@
                      <!-- <form method="post">  
                           <input type="submit" name="pdf" class="btn btn-danger" value="Create PDF" />  
                      </form>   -->
-                     <a href="open_complaints_csv.php?name=<?php echo $name; ?>" class="btn btn-danger">Export</a>
+                     <a href="opencomplaints_csv.php" class="btn btn-danger">Export</a>
                      <br><br>
-                     <a href="/ComplaintMgSystem-PHP/dummy/message.php" class="btn btn-danger"> Back</a>
+                     <a href="/ComplaintMgSystem-PHP/admin/admin-profile.php" class="btn btn-danger"> Back</a>
                 </div>  
            </div>  
       </body>  

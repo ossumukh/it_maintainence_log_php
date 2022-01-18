@@ -1,3 +1,7 @@
+<link rel="shortcut icon" href="../files/img/ico.ico">
+    <link rel="stylesheet" href="../files/css/bootstrap.css">
+    <link rel="stylesheet" href="../files/css/custom.css">
+
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr"
     prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
@@ -88,9 +92,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CPMS  </title>
-    <link rel="shortcut icon" href="../files/img/ico.ico">
-    <link rel="stylesheet" href="../files/css/bootstrap.css">
-    <link rel="stylesheet" href="../files/css/custom.css">
+
 
 
   </head>
@@ -109,19 +111,20 @@
 <!-- Export link -->
 <div class="col-md-12 head">
     <div class="float-right">
-        <a href="indexs3.php" class="btn btn-primary"><i class="dwn"></i><b><button type="submit" >Export</button></b></a>
+        <a href="indexs3.php" class="btn btn-primary"><i class="dwn"></i><b><button type="submit" >Export</button></b></a><br><br>
+        <a href="/ComplaintMgSystem-PHP/admin/admin-profile.php" class="btn btn-primary"><i class="dwn"></i><b><button type="submit" >Back</button></b></a>
     </div>
 </div>
 <br>
 <!-- Data list table --> 
 <table border='1' width="1000px">
 <div style="font-weight:bolder;">
-        <tr>
-        <th width="5%">id</th>  
-        <th width="15%">name</th>  
-        <th width="10%">email</th>
-        <th width="10%">Department</th>  
-        <th width="10%">date</th>  
+        <tr style="background-color:#808080">
+        <th >id</th>  
+        <th >name</th>  
+        <th >email</th>
+        <th >Department</th>  
+        <th >date</th>  
         </tr>
 </div>
     <tbody>

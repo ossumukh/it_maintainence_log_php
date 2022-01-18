@@ -1,7 +1,7 @@
 <?php
 
 $conn = mysqli_connect("localhost", "ossum", "focus", "cpmsphp");
-$sqlQuery = "SELECT name,COUNT(*) as total_complaints FROM `cmp_log` group by name;";
+$sqlQuery = "SELECT name,COUNT(*) as total_complaints FROM `cmp_log` WHERE ref_no NOT IN (SELECT ref_no FROM view_cmp) group by name;";
 
 $result = mysqli_query($conn,$sqlQuery);
 
@@ -143,4 +143,19 @@ console.log(names)
         },
       });
     });
+
+
+   
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
