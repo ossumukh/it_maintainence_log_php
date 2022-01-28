@@ -71,7 +71,7 @@ mysqli_close($conn);
       "
     >
       <h2 style="text-align: center">
-        Bar Graph of Coordinator vs their Total Complaints in 
+        Pie chart of Coordinator vs their Total Complaints in 
       </h2>
       <div
         class="chart-container"

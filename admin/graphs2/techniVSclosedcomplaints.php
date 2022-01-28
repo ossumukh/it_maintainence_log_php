@@ -72,7 +72,7 @@ mysqli_close($conn);
       "
     >
       <h2 style="text-align: center">
-        Bar Graph of Technicians vs their Closed Complaints in 
+        Pie chart of Technicians vs their Closed Complaints in 
       </h2>
       <div
         class="chart-container"

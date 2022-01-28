@@ -97,19 +97,34 @@
 
 
 
+<!-- <html> -->
+<!-- jQuery library -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
+<!-- jQuery UI library -->
+<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+$(function() {
+    $("#first_name").autocomplete({
+        source: "autocomplete.php",
+    });
+});
+</script>
+</html> -->
 
 
 
   
 <html>
 <body>
+
 <center>
 <h1>Search Complaints</h1>
 <!-- <a href="add_student.php">Add Student</a><br> -->
  
 <form action="search.php" method="post">
-<input type="text" name="search"  style="margin-up:10px;" >
+<input type="text" id="first_name" name="search"  style="margin-up:10px;" placeholder="Search">
 <br><br>
 <input type="submit" value="Search" class="btn btn-primary">
 <br><br>
@@ -117,8 +132,6 @@
 <br>
 
 
-
-<!-- <a href="<?= $search ?>">The link to the file</a> -->
 
 
 </form>
@@ -181,7 +194,7 @@ $(function()
  }
 // require_once('cpmsphp.php');
 // $sql='select * from cmp_log order by id'or id like '%$search%'or phone no like '%$search%'
-$sql="select * from `cmp_log` where `name` like '%$search%' or `id` like '%$search%' or `phone no` like '%$search%' or `ref_no` like '%$search%'or `complain` like '%$search%' or `statuses` like '%$search%' order by id";
+$sql="select * from `cmp_log` where `name` like '%$search%' or `email` like '%$search%' or `id` like '%$search%' or `phone no` like '%$search%' or `ref_no` like '%$search%'or `complain` like '%$search%' or `statuses` like '%$search%' order by id";
 $res=$conn->query($sql);
 while($row=$res->fetch_assoc()){
 		echo '<tr>';
