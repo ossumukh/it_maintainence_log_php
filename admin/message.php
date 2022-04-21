@@ -115,7 +115,7 @@
 
 
   <div class="cover main">
-    <h1>Messages</h1>
+    <h1>Not yet opened complaints</h1>
   </div>
 
     <div class="div">

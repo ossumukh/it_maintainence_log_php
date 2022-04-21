@@ -119,7 +119,7 @@
       border-top: 0px solid #eee;
       border-bottom: 0px solid #eee!important;
       padding-left: 0px;
-      color:#0ea798;
+      color:#2316da;
     }
     input,button.log{width: 450px;}
     </style>
@@ -183,10 +183,7 @@
                   <td class="text-left">Your Username</td>
                   <td class="text-left"><div class="dis_b"><?php echo $username;?></div></td>
                 </tr>
-                <tr>
-                  <td class="text-left">Your User ID</td>
-                  <td class="text-left"><div class="dis_b"><?php echo $alpha.$id;  $user_id = $id;?></div></td>
-                </tr>
+                
                 <tr>
                   <td class="text-left">Your Your Email ID</td>
                   <td class="text-left"><div class="dis_b"><?php echo $email;?></div></td>

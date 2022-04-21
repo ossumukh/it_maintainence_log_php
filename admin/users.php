@@ -136,11 +136,11 @@
                 </form>
             </div>
 
-            <div class='admin-data'>
+            <!-- <div class='admin-data'>
               <form method="get" action="http://localhost/ComplaintMgSystem-PHP/admin/graphs/graph2.html">
                   <button type="submit">graph1</button>
                 </form>
-            </div>
+            </div> -->
                 
             <br><br><br><br><br><br>
             <?php

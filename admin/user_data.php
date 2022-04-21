@@ -48,7 +48,8 @@
                echo "<tr> <td> <b> Email </b> </td>";
                echo "     <td> ".$arry['email']."</td> </tr>";
                echo "<tr> <td> <b> Password </b> </td>";
-               echo "     <td> ".md5($arry['password'])."</td> </tr>";
+              //  echo "     <td> ".md5($arry['password'])."</td> </tr>";
+               echo "     <td> ".$arry['password']."</td> </tr>";
                echo "<tr> <td> <b> Joined in </b> </td>";
                echo "     <td> ".$arry['date']."</td></tr>";
 
